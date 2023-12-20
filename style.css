@@ -1,0 +1,14 @@
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(Background.jpg);
+  }
+  
+  canvas {
+    border: 1px solid #f4ecec;
+  }
+#tetrisCanvas {
+  background-color: rgb(216, 214, 214); 
+}  
