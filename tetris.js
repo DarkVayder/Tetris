@@ -6,7 +6,7 @@ const COLS = 10;
 const BLOCK_SIZE = 30;
 
 const colors = [
-  '#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500'
+  '#0000ff', '#00ff00', '#ffff00', '#ff00ff', '#00ffff', '#ffa500'
 ];
 
 const tetrominos = [
