@@ -6,7 +6,14 @@ const COLS = 10;
 const BLOCK_SIZE = 30;
 
 const colors = [
-  '#0000ff', '#00ff00', '#ffff00', '#ff00ff', '#00ffff', '#ffa500'
+  getRandomColor(),
+  getRandomColor(),
+  getRandomColor(),
+  getRandomColor(),
+  getRandomColor(),
+  getRandomColor(),
+  getRandomColor(),
+  getRandomColor(),
 ];
 
 const tetrominos = [
@@ -18,6 +25,15 @@ const tetrominos = [
   [[1, 1], [1, 1]],
   [[1, 1, 1], [1, 0, 0]],
 ];
+
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 5)];
+  }
+  return color;
+}
 
 function drawBlock(x, y, color) {
   ctx.fillStyle = color;
@@ -36,10 +52,11 @@ function drawBoard() {
 }
 
 function drawTetromino() {
+  const color = Math.floor(Math.random() * colors.length);
   for (let row = 0; row < currentTetromino.length; row++) {
     for (let col = 0; col < currentTetromino[row].length; col++) {
       if (currentTetromino[row][col]) {
-        drawBlock(currentX + col, currentY + row, colors[currentTetromino[row][col] - 1]);
+        drawBlock(currentX + col, currentY + row, colors[color]);
       }
     }
   }
@@ -126,7 +143,7 @@ function spawnTetromino() {
   currentY = 0;
 
   if (!isValidMove(0, 0)) {
-    alert('opps Game Over!');
+    alert('Oops! Game Over!');
     resetGame();
   }
 }
