@@ -6,14 +6,7 @@ const COLS = 10;
 const BLOCK_SIZE = 30;
 
 const colors = [
-  getRandomColor(),
-  getRandomColor(),
-  getRandomColor(),
-  getRandomColor(),
-  getRandomColor(),
-  getRandomColor(),
-  getRandomColor(),
-  getRandomColor(),
+  "#4d6b53",
 ];
 
 const tetrominos = [
